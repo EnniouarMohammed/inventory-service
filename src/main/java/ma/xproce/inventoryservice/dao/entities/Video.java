@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -21,8 +22,7 @@ public class Video {
     private String name;
     private String url;
     private String description;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date datePublication;
+    private LocalDate datePublication;
 
     @ManyToOne
     private Creator creator;

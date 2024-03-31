@@ -23,9 +23,17 @@ public class VideoController {
     @GetMapping("/videosList")
     public String showVideos(Model model) {
         List<Video> videos = videoManager.getAllVideos();
+        List<Creator> allCreators = creatorManager.getAllCreator();
+
+        for (Video video : videos) {
+            Creator selectedCreator = video.getCreator();
+            model.addAttribute("selectedCreator" + video.getId(), selectedCreator);
+        }
+
         model.addAttribute("videos", videos);
         return "videosList";
     }
+
 
     // Ajouter une nouvelle
     @GetMapping("/addVideo")

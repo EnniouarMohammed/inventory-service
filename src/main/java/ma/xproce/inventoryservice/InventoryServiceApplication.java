@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -50,39 +51,40 @@ public class InventoryServiceApplication {
 			video1.setName("7 Days Stranded On An Island");
 			video1.setUrl("https://www.youtube.com/watch?v=erLbbextvlY");
 			video1.setDescription("Follow and subscribe");
-			video1.setDatePublication(new Date(2024,3,23));
+
+			video1.setDatePublication(LocalDate.parse("2024-05-12"));
 			video1.setCreator(creator1);
 			Video video2 = new Video();
 			video2.setName("$1 vs $250,000,000 Private Island!");
 			video2.setUrl("https://www.youtube.com/watch?v=krsBRQbOPQ4");
 			video2.setDescription("Follow and subscribe");
-			video2.setDatePublication(new Date(2024,3,8));
+			video2.setDatePublication(LocalDate.parse("2024-02-05"));
 			video2.setCreator(creator1);
 
 			Video video3 = new Video();
 			video3.setName("Our Winter Trip!");
 			video3.setUrl("https://www.youtube.com/watch?v=YWrFNoTXbKs");
 			video3.setDescription("Follow and subscribe");
-			video3.setDatePublication(new Date(2023,06,18));
+			video3.setDatePublication(LocalDate.parse("2024-04-13"));
 			video3.setCreator(creator2);
 			Video video4 = new Video();
 			video4.setName("How a Reddit Post Changed my Life");
 			video4.setUrl("https://www.youtube.com/watch?v=FcLaxJbWHZs");
 			video4.setDescription("Follow and subscribe");
-			video4.setDatePublication(new Date(2022,11,8));
+			video4.setDatePublication(LocalDate.parse("2024-01-26"));
 			video4.setCreator(creator2);
 
 			Video video5 = new Video();
 			video5.setName("Die For You");
 			video5.setUrl("https://www.youtube.com/watch?v=QLCpqdqeoII");
 			video5.setDescription("Available now");
-			video5.setDatePublication(new Date(2024,3,3));
+			video5.setDatePublication(LocalDate.parse("2023-12-30"));
 			video5.setCreator(creator3);
 			Video video6 = new Video();
 			video6.setName("Call Out My Name");
 			video6.setUrl("https://www.youtube.com/watch?v=rsEne1ZiQrk");
 			video6.setDescription("Available now");
-			video6.setDatePublication(new Date(2024,3,24));
+			video6.setDatePublication(LocalDate.parse("2023-11-02"));
 			video6.setCreator(creator3);
 
 			videoManager.addVideo(video1);
