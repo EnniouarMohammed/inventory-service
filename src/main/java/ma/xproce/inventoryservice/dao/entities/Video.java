@@ -2,10 +2,8 @@ package ma.xproce.inventoryservice.dao.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "videos")

@@ -12,6 +12,7 @@
         <thead>
         <tr>
             <th>ID</th>
+            <th>Creator</th>
             <th>Title</th>
             <th>Description</th>
             <th>Publication Date</th>
@@ -21,9 +22,7 @@
         <tbody>
         <tr th:each="video : ${videos}">
             <td th:text="${video.getId()}"></td>
-            <td th:each="creator : ${allCreators}"
-                th:value="${creator.id}"
-                th:text="${creator.name == video.creator.name}"></td>
+            <td th:text="${video.getCreator().getName()}"></td>
             <td th:text="${video.getName()}"></td>
             <td th:text="${video.getDescription()}"></td>
             <td th:text="${video.datePublication}"></td>

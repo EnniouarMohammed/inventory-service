@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -23,13 +24,6 @@ public class VideoController {
     @GetMapping("/videosList")
     public String showVideos(Model model) {
         List<Video> videos = videoManager.getAllVideos();
-        List<Creator> allCreators = creatorManager.getAllCreator();
-
-        for (Video video : videos) {
-            Creator selectedCreator = video.getCreator();
-            model.addAttribute("selectedCreator" + video.getId(), selectedCreator);
-        }
-
         model.addAttribute("videos", videos);
         return "videosList";
     }
