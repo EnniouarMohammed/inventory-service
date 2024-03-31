@@ -1,6 +1,8 @@
 package ma.xproce.inventoryservice.web;
 
+import ma.xproce.inventoryservice.dao.entities.Creator;
 import ma.xproce.inventoryservice.dao.entities.Video;
+import ma.xproce.inventoryservice.service.CreatorManager;
 import ma.xproce.inventoryservice.service.VideoManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ public class VideoController {
 
     @Autowired
     private VideoManager videoManager;
+    @Autowired
+    private CreatorManager creatorManager;
 
     // Afficher la liste des vidéos
     @GetMapping("/videosList")
@@ -40,6 +44,14 @@ public class VideoController {
     @GetMapping("/editVideo/{id}")
     public String showEditVideoForm(@PathVariable("id") int id, Model model) {
         Video video = videoManager.findVideoById(id);
+
+        Creator selectedCreator = video.getCreator();
+        List<Creator> allCreators = creatorManager.getAllCreator();
+
+        model.addAttribute("video", video);
+        model.addAttribute("selectedCreator", selectedCreator);
+        model.addAttribute("allCreators", allCreators);
+
         model.addAttribute("video", video);
         return "editVideo";
     }
