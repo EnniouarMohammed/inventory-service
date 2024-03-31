@@ -31,6 +31,8 @@ public class VideoController {
     @GetMapping("/addVideo")
     public String showAddVideoForm(Model model) {
         model.addAttribute("video", new Video());
+        List<Creator> allCreators = creatorManager.getAllCreator();
+        model.addAttribute("allCreators", allCreators);
         return "addVideo";
     }
 

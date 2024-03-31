@@ -10,6 +10,14 @@
     <h1>Add Video</h1>
     <form action="#" th:action="@{/Videos/addVideo}" th:object="${video}" method="post">
         <div class="form-group">
+            <label for="creator">Select Creator:</label>
+            <select class="form-control" name="creator" id="creator">
+                <option th:each="creator : ${allCreators}"
+                        th:value="${creator.id}"
+                        th:text="${creator.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="name">Title:</label>
             <input type="text" class="form-control" id="name" th:field="*{name}" />
         </div>
