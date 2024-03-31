@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html leng="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Videos List</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Publication Date</th>
+            <th>URL</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="video : ${videos}">
+            <td th:text="${video.getId()}"></td>
+            <td th:text="${video.getName()}"></td>
+            <td th:text="${video.getDescription()}"></td>
+            <td th:text="${video.getDatePublication()}"></td>
+            <td th:text="${video.getUrl()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
