@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <h1>Edit Video</h1>
-    <form action="#" th:action="@{/Videos/editVideo/{id}(id=${video.id})}" th:object="${video}" method="post">
+    <form action="#" th:action="@{/editVideo/{id}(id=${video.id})}" th:object="${video}" method="post">
     <input type="hidden" th:field="*{id}" />
         <div class="form-group">
             <label for="creator">Select Creator:</label>
