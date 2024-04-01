@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>creators List</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Manage <b>creators</b></h2>
+                </div>
+                <div class="col-sm-6">
+                    <a href="/addCreator" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New creator</span></a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>
+                    <span class="custom-checkbox">
+                        <input type="checkbox" id="selectAll">
+                        <label for="selectAll"></label>
+                    </span>
+                </th>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="creator : ${creators}">
+                <td>
+                    <span class="custom-checkbox">
+                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                        <label for="checkbox1"></label>
+                    </span>
+                </td>
+                <td th:text="${creator.getId()}"></td>
+                <td th:text="${creator.getName()}"></td>
+                <td th:text="${creator.getEmail()}"></td>
+                <td>
+                    <a th:href="@{'/editCreator/' + ${creator.getId()}}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                    <a th:href="@{'/deleteCreator/' + ${creator.getId()}}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
