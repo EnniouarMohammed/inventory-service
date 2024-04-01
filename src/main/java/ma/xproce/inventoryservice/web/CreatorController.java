@@ -65,6 +65,6 @@ public class CreatorController {
             Creator creator = creatorManager.findCreatorById(id);
             creatorManager.deleteCreator(creator);
         }
-        return "redirect:/deleteCreator";
+        return "redirect:/creatorsList";
     }
 }
