@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Service</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Center title */
+        .center-title {
+            text-align: center;
+        }
+        /* Margin for buttons */
+        .button-margin {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="center-title">Inventory Service</h1>
+            <div class="button-margin">
+                <a th:href="@{'/videosList'}" class="btn btn-primary btn-lg btn-block">Management of Creators</a>
+                <a th:href="@{'/videosList'}" class="btn btn-secondary btn-lg btn-block">Management of Videos</a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
